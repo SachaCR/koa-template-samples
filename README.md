@@ -18,7 +18,7 @@ I will add links to these articles in this README.md when they will be published
 - Illustrate dependencies injections with [koa-depsi](https://www.npmjs.com/package/koa-depsi) to simulate DB failures in your tests
 - Clean error management with : [verror](https://www.npmjs.com/package/verror)
 - Payload validation with AJV through [koa-validator-ajv](https://www.npmjs.com/package/koa-validator-ajv)
-- Testing your API with operaton on the database
+- Testing your API with operations on the database
 - Testing routes that performs HTTP calls to externals services with [nock](https://www.npmjs.com/package/nock)
 - Implement a good SQL transaction management with PostgresSQL [pg](https://www.npmjs.com/package/pg)
 

@@ -1,0 +1,39 @@
+version: '2.1'
+
+services:
+  app:
+    container_name: koa-template-samples
+    volumes:
+      - "./lib:/src/lib"
+      - "./tests:/src/tests"
+      - "./config:/src/config"
+    build:
+      context: .
+      args:
+        - NPM_TOKEN
+    environment:
+      - NPM_TOKEN
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "80:80"
+
+  postgres:
+    image: postgres:9.6
+    container_name: postgres-koa-template-samples
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U local -d local"]
+      interval: 1s
+      timeout: 30s
+      retries: 50
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+      - POSTGRES_HOSTNAME=postgres

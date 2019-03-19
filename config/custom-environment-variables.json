@@ -1,0 +1,16 @@
+{
+  "app": {
+    "port": "PORT"
+  },
+  "logger": {
+    "level": "LOGGER_LEVEL"
+  },
+  "postgres": {
+    "user": "POSTGRES_USER",
+    "database": "POSTGRES_DB",
+    "password": "POSTGRES_PASSWORD",
+    "host": "POSTGRES_HOSTNAME",
+    "port": "POSTGRES_PORT"
+  },
+  "services": {}
+}

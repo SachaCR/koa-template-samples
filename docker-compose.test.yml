@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  app:
+    entrypoint: 'npm run test:docker:watch'
+    ports:
+      - "80:80"
+    environment:
+      - PORT=80
+      - NODE_ENV=docker-test

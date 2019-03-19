@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  app:
+    entrypoint: 'node index.js'
+    ports:
+      - "80:80"
+    environment:
+      - PORT=80
+      - NODE_ENV=docker-dev
+

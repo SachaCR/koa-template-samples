@@ -1,0 +1,64 @@
+{
+  "name": "koa-template-samples",
+  "version": "1.0.0",
+  "description": "koa-template-samples API",
+  "main": "index.js",
+  "nyc": {
+    "exclude": [
+      "tests",
+      "lib/middlewares",
+      "lib/db/index.js"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
+  },
+  "mocha": {
+    "recursive": true,
+    "reporter": "spec",
+    "spec": "./tests/**/*.test.js"
+  },
+  "scripts": {
+    "lint": "eslint ./lib ./tests ./config",
+    "start": "node index.js",
+    "start:docker": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build --force-recreate --abort-on-container-exit",
+    "test": "NODE_ENV=test nyc mocha",
+    "test:watch": "NODE_ENV=test watch 'mocha' lib config tests --wait 5",
+    "test:docker": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up --build --force-recreate --abort-on-container-exit",
+    "test:docker:watch": "watch 'nyc mocha' lib config tests --wait 5",
+    "doc": "apidoc -i lib/ -o apidoc -e apidoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SachaCR/koa-template-samples.git"
+  },
+  "keywords": [],
+  "author": "SachaCR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SachaCR/koa-template-samples/issues"
+  },
+  "homepage": "https://github.com/SachaCR/koa-template-samples#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "config": "^3.0.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
+    "koa-depsi": "^1.0.0",
+    "koa-router": "^7.4.0",
+    "koa-validator-ajv": "^1.0.0",
+    "pg": "^7.8.1",
+    "superagent": "^4.1.0",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.7",
+    "eslint": "^4.9.0",
+    "mocha": "^6.0.2",
+    "nock": "^10.0.6",
+    "nyc": "^13.3.0",
+    "watch": "^1.0.2"
+  }
+}

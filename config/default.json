@@ -1,0 +1,21 @@
+{
+  "app": {
+    "port": 80
+  },
+  "logger": {
+    "level": "info"
+  },
+  "postgres": {
+    "user": "local",
+    "database": "local",
+    "password": "local",
+    "host": "postgres",
+    "port": 5432
+  },
+  "services": {
+    "weather": {
+      "protocol": "https",
+      "host": "www.prevision-meteo.ch"
+    }
+  }
+}

@@ -115,7 +115,6 @@ describe('POST /todos', async () => {
   })
 
   it('Should return an error on database failure', async () => {
-    const dbClient = require('../../lib/db')(logger)
     await bootstrapDB()
     const server = app({
       dbClient: {
@@ -131,7 +130,6 @@ describe('POST /todos', async () => {
       .catch(err => err.response)
 
     server.close()
-    await dbClient.close()
 
     assert.deepStrictEqual(response.body, {
       error: 'CREATE_TODO_ERROR',

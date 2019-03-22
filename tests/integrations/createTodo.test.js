@@ -115,7 +115,6 @@ describe('POST /todos', async () => {
   })
 
   it('Should return an error on database failure', async () => {
-    await bootstrapDB()
     const server = app({
       dbClient: {
         query: async () => {

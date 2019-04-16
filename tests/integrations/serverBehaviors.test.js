@@ -17,7 +17,7 @@ describe('Server behaviors', async () => {
     await bootstrapDB()
     const server = app({ dbClient, logger }).listen(config.app.port)
 
-    const response = await request.get('http://localhost/notFound').catch(err => err.response)
+    const response = await request.get('http://localhost:8080/notFound').catch(err => err.response)
     server.close()
     await dbClient.close()
 

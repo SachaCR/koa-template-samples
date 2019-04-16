@@ -19,7 +19,7 @@ describe('DELETE /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .delete('http://localhost/todos')
+      .delete('http://localhost:8080/todos')
       .send({ ids: [1] })
       .catch(err => err.response)
 
@@ -51,7 +51,7 @@ describe('DELETE /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .delete('http://localhost/todos')
+      .delete('http://localhost:8080/todos')
       .send({ ids: [1, 2, 3] })
       .catch(err => err.response)
 
@@ -71,7 +71,7 @@ describe('DELETE /todos', async () => {
     const server = app({ logger }).listen(config.app.port)
 
     const response = await request
-      .delete('http://localhost/todos')
+      .delete('http://localhost:8080/todos')
       .send({ ids: ['invalid_id', 2, 3] })
       .catch(err => err.response)
 
@@ -113,7 +113,7 @@ describe('DELETE /todos', async () => {
     }).listen(config.app.port)
 
     const response = await request
-      .delete('http://localhost/todos')
+      .delete('http://localhost:8080/todos')
       .send({ ids: [1, 2, 3] })
       .catch(err => err.response)
 

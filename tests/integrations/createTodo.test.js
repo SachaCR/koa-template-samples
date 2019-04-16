@@ -13,7 +13,7 @@ describe('POST /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .post('http://localhost/todos')
+      .post('http://localhost:8080/todos')
       .send({ title: 'Learn Javascript' })
       .catch(err => err.response)
 
@@ -46,7 +46,7 @@ describe('POST /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .post('http://localhost/todos')
+      .post('http://localhost:8080/todos')
       .send({
         title: 'Learn Javascript',
         done: true,
@@ -83,7 +83,7 @@ describe('POST /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .post('http://localhost/todos')
+      .post('http://localhost:8080/todos')
       .send({
         done: true,
         priority: 3,
@@ -124,7 +124,7 @@ describe('POST /todos', async () => {
     }).listen(config.app.port)
 
     const response = await request
-      .post('http://localhost/todos')
+      .post('http://localhost:8080/todos')
       .send({ title: 'Lean Javascript' })
       .catch(err => err.response)
 

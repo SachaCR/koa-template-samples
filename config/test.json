@@ -1,5 +1,7 @@
 {
-  "app": {},
+  "app": {
+    "port": 8080
+  },
   "logger": {},
   "postgres": {
     "host": "localhost"

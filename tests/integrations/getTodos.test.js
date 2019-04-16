@@ -38,7 +38,7 @@ describe('GET /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .get('http://localhost/todos')
+      .get('http://localhost:8080/todos')
       .catch(err => err.response)
 
     server.close()
@@ -74,7 +74,7 @@ describe('GET /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .get('http://localhost/todos')
+      .get('http://localhost:8080/todos')
       .catch(err => err.response)
 
     server.close()
@@ -107,7 +107,7 @@ describe('GET /todos', async () => {
     const server = app({ dbClient, logger }).listen(config.app.port)
 
     const response = await request
-      .get('http://localhost/todos')
+      .get('http://localhost:8080/todos')
       .catch(err => err.response)
 
     server.close()
@@ -141,7 +141,7 @@ describe('GET /todos', async () => {
       }, logger }).listen(config.app.port)
 
     const response = await request
-      .get('http://localhost/todos')
+      .get('http://localhost:8080/todos')
       .catch(err => err.response)
 
     server.close()
